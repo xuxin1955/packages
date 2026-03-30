@@ -107,33 +107,27 @@ define Package/node/config
 
 	choice
 		prompt "Version Selection"
-		default NODEJS_12 if mips||mipsel||mips64||mips64el
 		default NODEJS_20
 		help
 		 Select node.js version.
 		 The host package version is also the same.
 
 		config NODEJS_12
-			bool "12.x End-of-life : Only for MIPS"
+			bool "12.x End-of-life"
 
 		config NODEJS_14
-			depends on !(mips||mipsel||mips64||mips64el)
 			bool "14.x End-of-Life"
 
 		config NODEJS_16
-			depends on !(mips||mipsel||mips64||mips64el)
 			bool "16.x End-of-Life"
 
 		config NODEJS_18
-			depends on !(mips||mipsel||mips64||mips64el)
 			bool "18.x Maintenance LTS"
 			
 		config NODEJS_20
-			depends on !(mips||mipsel||mips64||mips64el)
 			bool "20.x Active LTS"
 			
 		config NODEJS_22
-			depends on !(mips||mipsel||mips64||mips64el)
 			bool "22.x Active LTS"
 	endchoice
 
